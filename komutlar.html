@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<script src="../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118672947-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-118672947-1');
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.burger-toggle').click(function() {
+      $('.site-nav').toggleClass('site-nav--open', 500);
+      $(this).toggleClass('open');
+    });
+  });
+</script>
+<html lang="en" dir="ltr">
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Argon - Discord Bot</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h3 style="margin-left: 50px; color: #FFFFFF;">ARGON BOT</h3>
+              <nav class="site-nav" style="margin-top: -42px; margin-left: 200px;">
+                <ul id="site-nav-ul">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+              <li><a href="komutlar.html">Komutlar</a></li>
+              <li><a href="ozellikler.html">Özellikler</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+              </nav>
+        <div class="burger-toggle">
+        <div class="burger"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+	  </header>
+<br>
+<br>
+<br>
+
+<h1 style="color: #FFFFFF; text-align: center;">KOMUT LİSTESİ</h1>
+
+<ul id="cmdnav">
+  <li><a href="#yetkili" onclick="selection('yetkili');">Yetkili</a></li>
+  <li><a href="#ayar" onclick="selection('ayar');">Ayar</a></li>
+  <li><a href="#kayit" onclick="selection('kayit-sistemi');">Kayıt Sistemi</a></li>
+  <li><a href="#otorol" onclick="selection('otorol-sistemi');">Otomatik Rol</a></li>
+  <li><a href="#oyun" onclick="selection('oyun');">Oyun</a></li>
+
+</ul>
+
+<div id="yetkili">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">KOMUT</th>
+        <th scope="col">AÇIKLAMA</th>
+        <th scope="col">ÖRNEK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!ban</td>
+        <td class="secondrow" data-label="Description">Bir kullanıcıyı sunucudan yasaklamanızı sağlar.</td>
+        <td class="thirdrow" data-label="Example">a!ban @Data_TR#0533 Reklam Yapmak</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!kick</td>
+        <td class="secondrow" data-label="Description">Bir kullanıcıyı sunucudan atmanızı sağlar.</td>
+        <td class="thirdrow" data-label="Example">a!ban @Data_TR#0533 Küfür Etmek</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!ayarlar</td>
+        <td class="secondrow" data-label="Description">Sunucu ayarlarını görmenizi sağlar.</td>
+        <td class="thirdrow" data-label="Example">a!ayarlar</td>
+      </tr>
+   
+    </tbody>
+  </table>
+</div>
+
+<div id="ayar" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">KOMUT</th>
+        <th scope="col">AÇIKLAMA</th>
+        <th scope="col">ÖRNEK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" data-label="Command">a!log</td>
+        <td class="secondrow" data-label="Description">Sunucu log kanalını ayarlarsınız.</td>
+        <td class="thirdrow" data-label="Example">a!log #kanal</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!reklam-filtresi</td>
+        <td class="secondrow" data-label="Description">Sunucuda kullanıcıların reklam yapmasını engeller.</td>
+        <td class="thirdrow" data-label="Example">a!reklam-filtresi aç</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!reklam-kick</td>
+        <td class="secondrow" data-label="Description">Sunucu üyeleri 3 uyarı aldıktan sonra sunucudan atılırlar.</td>
+        <td class="thirdrow" data-label="Example">a!reklam-kick aç</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!küfür-filtresi</td>
+        <td class="secondrow" data-label="Description">Kullanıcıların küfürlerini engeller.</td>
+        <td class="thirdrow" data-label="Example">a!küfü-filtresi aç</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!giriş-çıkış</td>
+        <td class="secondrow" data-label="Description">Sunucuya bir üye katılınca resimli bilgi gönderir.</td>
+        <td class="thirdrow" data-label="Example">a!giriş-çıkış #kanal</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!sayaç</td>
+        <td class="secondrow" data-label="Description">Suncunuz için sayaç sistemi ayarlarsınız.</td>
+        <td class="thirdrow" data-label="Example">a!sayaç 100 #kanal</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<div id="kayit-sistemi" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">KOMUT</th>
+        <th scope="col">AÇIKLAMA</th>
+        <th scope="col">ÖRNEK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!kayıt</td>
+        <td class="secondrow" data-label="Description">Sunucuya yeni katılan kullanıcıların kayı olmasını sağlar.</td>
+        <td class="thirdrow" data-label="Example">a!kayıt</td>
+      </tr>
+      <tr>
+        <td class="firstrow" data-label="Command">a!kayıt-sistemi</td>
+        <td class="secondrow" data-label="Description">Kayıt sistemini aktif etmenizi veya kapatmanızı sağlar.</td>
+        <td class="thirdrow" data-label="Example">a!kayıt-sistemi aç</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!kayıt-rol</td>
+        <td class="secondrow" data-label="Description">Kullanıcılara kayıt olunca verilecek rolü ayarlar.</td>
+        <td class="thirdrow" data-label="Example">a!kayıt-rol @Kayıtlı</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!kayıt-kanal</td>
+        <td class="secondrow" data-label="Description">Kullanıcıların kayıt olacağı kanalı ayarlar.</td>
+        <td class="thirdrow" data-label="Example">a!kayıt-kanal #kayıt</td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <div class="cmdnotefirst">
+    Kayıt sisteminin mantığı; kullanıcı sunucuya katıldıktan sonra bot kayıt kanalı hariç diğer kanalların görünümü kapatır ve kaydolana kadar açmaz.
+  </div>
+ 
+</div>
+
+<div id="otorol-sistemi" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">KOMUT</th>
+        <th scope="col">AÇIKLAMA</th>
+        <th scope="col">ÖRNEK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!otorol</td>
+        <td class="secondrow" data-label="Description">Sunucuya bir üye katılınca otomatik rol vermeyi ayarlar.</td>
+        <td class="thirdrow" data-label="Example">a!otorol @rol #kanal</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!otorol-mesaj</td>
+        <td class="secondrow" data-label="Description">Otomatik Rol sisteminin bilgilendirme mesajlarını kendinize özel ayarlarsınız.</td>
+        <td class="thirdrow" data-label="Example">a!otorol-mesaj Mesajnız</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">a!otorol-kapat</td>
+        <td class="secondrow" data-label="Description">Ayarlanan Otomatik Rol sistemini devre dışı bırakır.</td>
+        <td class="thirdrow" data-label="Example">a!otorol-kapat</td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <div class="cmdnotefirst">
+ Otorol mesajını ayarlamanız şart değildir. Ayarlamadığınız taktirde botumuz <br> hazır olarak bilgi mesajı atacaktır.
+  </div>
+  <div class="cmdnotefirst">
+   <b>OTOROL MESAJI DEĞİŞKENLERİ:</b> <br> -uye- , -server- , -kisisayisi- , -rol- , -kullanici- 
+     </div>
+     <div class="cmdnotefirst">
+      <b>ÖRNEK MESAJ:</b> <br> a!otorol-mesaj **-uye-** Merhaba **-server-** sunucusuna Hoşgeldin! Seninle beraber -uyesayisi- kişiyiz! 
+        </div>
+</div>
+
+<div id="boxes-daycare" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Command</th>
+        <th scope="col">Description</th>
+        <th scope="col">Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.box &lt;box number&gt;</td>
+        <td class="secondrow" data-label="Description">Check your box. Default box is 1. Check a trainer's box by tagging them or using their ID after the command</td>
+        <td class="thirdrow" data-label="Example">.box</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxprices</td>
+        <td class="secondrow" data-label="Description">Check the box prices</td>
+        <td class="thirdrow" data-label="Example">.boxprices</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.buybox</td>
+        <td class="secondrow" data-label="Description">Buy box space. Each box comes with 30 available spots for you to store your Pokémon</td>
+        <td class="thirdrow" data-label="Example">.buybox</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxpk &lt;box number&gt; &lt;Pokémon position&gt;</td>
+        <td class="secondrow" data-label="Description">Check a Pokémon's information from your box. Skip number 1 if you wish to view your first box. First box is the deault one</td>
+        <td class="thirdrow" data-label="Example">.boxpk 1 a1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxswap &lt;number&gt; &lt;Pokémon&gt;</td>
+        <td class="secondrow" data-label="Description">Store Pokémon into your box. Default box number is 1. It is not necessary to add it</td>
+        <td class="thirdrow" data-label="Example">.boxswap 1 Bulbasaur</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxswap &lt;box number&gt; &lt;Pokémon position&gt;</td>
+        <td class="secondrow" data-label="Description">Take Pokémon from your box. Default box number is 1. It is not necessary to add it</td>
+        <td class="thirdrow" data-label="Example">.boxswap 1 a1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxswap &lt;box number&gt; &lt;Pokémon&gt; &lt;Pokémon position&gt;</td>
+        <td class="secondrow" data-label="Description">Sent Pokémon to your box and take out at the same time. For Pokémon in your team you must type their name. For Pokémon in your box you must type their box position</td>
+        <td class="thirdrow" data-label="Example">.boxswap 1 Bulbasaur Squirtle Charmander a1 a2 a3</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.take boxpk &lt;box number&gt; &lt;box position&gt;</td>
+        <td class="secondrow" data-label="Description">Take an item from a Pokémon in your box</td>
+        <td class="thirdrow" data-label="Example">.take boxpk 1 a1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxrelease &lt;box number&gt; &lt;box position&gt;</td>
+        <td class="secondrow" data-label="Description">Release a Pokémon from your box</td>
+        <td class="thirdrow" data-label="Example">.boxrelease 1 a1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.boxmove &lt;box number&gt; &lt;box number&gt; &lt;Pokémon position&gt;</td>
+        <td class="secondrow" data-label="Description">Swap Pokémon between boxes. First the number of the box you wish to take Pokémon from, then the number of the box you wish to move the Pokémon to. Then the Pokémon positions you wish to move from one box to another. You can move multiple Pokémon at the same time</td>
+        <td class="thirdrow" data-label="Example">.boxmove 1 2 a1 a2 a3</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.daycare</td>
+        <td class="secondrow" data-label="Description">Check the Day Care</td>
+        <td class="thirdrow" data-label="Example">.daycare</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.raise &lt;Pokémon&gt;, &lt;Pokémon&gt;</td>
+        <td class="secondrow" data-label="Description">Leave two Pokémon at the Day Care</td>
+        <td class="thirdrow" data-label="Example">.raise Charizard, Ditto</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.get eggs</td>
+        <td class="secondrow" data-label="Description">Get the eggs from the Day Care to your team</td>
+        <td class="thirdrow" data-label="Example">.get eggs</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.get &lt;Pokémon&gt;</td>
+        <td class="secondrow" data-label="Description">Get a Pokémon from the Day Care</td>
+        <td class="thirdrow" data-label="Example">.get Charizard</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="items-pokedex" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Command</th>
+        <th scope="col">Description</th>
+        <th scope="col">Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.items &lt;number&gt;</td>
+        <td class="secondrow" data-label="Description">Check the items' list. The number indicates the page you are viewing</td>
+        <td class="thirdrow" data-label="Example">.items 1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.buy &lt;item&gt;</td>
+        <td class="secondrow" data-label="Description">Buy an item once or multiple times. If you are buying it once you don't need to add a number</td>
+        <td class="thirdrow" data-label="Example">.buy Leftovers 5</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.sell &lt;item&gt;</td>
+        <td class="secondrow" data-label="Description">Sell an item once or multiple times. If you are selling it once you don't need to add a number</td>
+        <td class="thirdrow" data-label="Example">.sell Leftovers 5</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.give &lt;Pokémon&gt; &lt;item&gt;</td>
+        <td class="secondrow" data-label="Description">Give an item to a Pokémon</td>
+        <td class="thirdrow" data-label="Example">.give Bulbasaur Leftovers</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.take &lt;Pokémon&gt;</td>
+        <td class="secondrow" data-label="Description">Take an item from a Pokémon</td>
+        <td class="thirdrow" data-label="Example">.take Bulbasaur</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.take team</td>
+        <td class="secondrow" data-label="Description">Take all the items from your team</td>
+        <td class="thirdrow" data-label="Example">.take team</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pokedex &lt;number&gt;</td>
+        <td class="secondrow" data-label="Description">Check all Pokémon sorted from A-Z. Default page is 1. Change the number to view a different page</td>
+        <td class="thirdrow" data-label="Example">.pokedex 1</td>
+      </tr>
+      <tr>
+        <td class="firstrow" data-label="Command">.pokedex &lt;Pokémon&gt;</td>
+        <td class="secondrow" data-label="Description">Check various information about a Pokémon</td>
+        <td class="thirdrow" data-label="Example">.pokedex Bulbasaur</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pokedex Caught/ Captured</td>
+        <td class="secondrow" data-label="Description">Check how many Pokémon you have captured</td>
+        <td class="thirdrow" data-label="Example">.pokedex Caught</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pokedex Remain/ Remaining</td>
+        <td class="secondrow" data-label="Description">Check how many Pokémon remain to be captured</td>
+        <td class="thirdrow" data-label="Example">.pokedex Remain</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pokedex &lt;type&gt;</td>
+        <td class="secondrow" data-label="Description">Check Pokémon listed by type</td>
+        <td class="thirdrow" data-label="Example">.pokedex Grass</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.moves &lt;Pokémon&gt; &lt;type&gt;</td>
+        <td class="secondrow" data-label="Description">Check a Pokémon's moves sorted by type</td>
+        <td class="thirdrow" data-label="Example">.moves Bulbasaur Grass</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.moves &lt;Pokémon&gt; Physical/ Special/ Status/ Level/ Damage/ Accuracy</td>
+        <td class="secondrow" data-label="Description">Check a Pokémon's moves sorted by one of the options</td>
+        <td class="thirdrow" data-label="Example">.moves Bulbasaur Physical</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.mvinfo &lt;move&gt;</td>
+        <td class="secondrow" data-label="Description">Check some information regarding a move</td>
+        <td class="thirdrow" data-label="Example">.mvinfo Phychic</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.ability &lt;ability&gt;</td>
+        <td class="secondrow" data-label="Description">Check some information regarding an ability</td>
+        <td class="thirdrow" data-label="Example">.ability Levitate</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.item &lt;item&gt;</td>
+        <td class="secondrow" data-label="Description">Check some information regarding an item</td>
+        <td class="thirdrow" data-label="Example">.item Leftovers</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.natures</td>
+        <td class="secondrow" data-label="Description">Check the effects each nature has</td>
+        <td class="thirdrow" data-label="Example">.natures</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.type &lt;type&gt;</td>
+        <td class="secondrow" data-label="Description">Check the weaknesses resistances and immunities each Pokémon type has</td>
+        <td class="thirdrow" data-label="Example">.type Fire</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="misc" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Command</th>
+        <th scope="col">Description</th>
+        <th scope="col">Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.fly &lt;region&gt; &lt;starter&gt;</td>
+        <td class="secondrow" data-label="Description">Change region. Fly to a different region in order to battle a new set of Gym Leaders, wild Pokémon and advance the game</td>
+        <td class="thirdrow" data-label="Example">.fly Johto Totodile</td>
+      </tr>
+       <tr>
+        <td class="firstrow" scope="row" data-label="Command">.trainers &lt;number&gt;</td>
+        <td class="secondrow" data-label="Description">Check all the available trainers. You can right click on the trainers and open the image in your browser for a better look</td>
+        <td class="thirdrow" data-label="Example">.trainers</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">ff/ run</td>
+        <td class="secondrow" data-label="Description">Surrender/ Run away. The command is used in Myuu's DMs while in a battle. It can only be used in your turn</td>
+        <td class="thirdrow" data-label="Example">ff</td>
+      </tr>
+      <tr>
+        <td class="firstrow" data-label="Command">.trainerboard</td>
+        <td class="secondrow" data-label="Description">Check the top 10 trainers win/lose wise</td>
+        <td class="thirdrow" data-label="Example">.trainerboard</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pkboard</td>
+        <td class="secondrow" data-label="Description">Check the top 10 Pokédex complitionist trainers</td>
+        <td class="thirdrow" data-label="Example">.pkboard</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.arts</td>
+        <td class="secondrow" data-label="Description">Check all the available arts for purchase</td>
+        <td class="thirdrow" data-label="Example">.arts</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.art</td>
+        <td class="secondrow" data-label="Description">Check how many art pieces you own</td>
+        <td class="thirdrow" data-label="Example">.art</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.buy &lt;art&gt;</td>
+        <td class="secondrow" data-label="Description">Purchase a piece of art</td>
+        <td class="thirdrow" data-label="Example">.buy Old Painting</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.sell &lt;art&gt;</td>
+        <td class="secondrow" data-label="Description">Sell a piece of art</td>
+        <td class="thirdrow" data-label="Example">.sell Old Painting</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.PKC</td>
+        <td class="secondrow" data-label="Description">Check the wealthiest users on a global scale</td>
+        <td class="thirdrow" data-label="Example">.PKC</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.suggest on/off</td>
+        <td class="secondrow" data-label="Description">Turn on or off the auto-suggestion feature. Auto-correct will make commands such as .pkinfo nudjfojkng a valid command and show Nidoking. Commands such as sell, release, trade and Master Ball are excluded from this feature</td>
+        <td class="thirdrow" data-label="Example">.suggest on</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.vote</td>
+        <td class="secondrow" data-label="Description">The link for upvoting Myuu</td>
+        <td class="thirdrow" data-label="Example">.vote</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.support</td>
+        <td class="secondrow" data-label="Description">Get the support server's link in Discord</td>
+        <td class="thirdrow" data-label="Example">.support</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.info</td>
+        <td class="secondrow" data-label="Description">Check some information regarding the game</td>
+        <td class="thirdrow" data-label="Example">.info</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="owners" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Command</th>
+        <th scope="col">Description</th>
+        <th scope="col">Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pksetup</td>
+        <td class="secondrow" data-label="Description">The only command you need to execute in order to setup Myuu in your server.</td>
+        <td class="thirdrow" data-label="Example">.pksetup</td>
+      </tr>
+      <tr>
+        <td class="firstrow" data-label="Command">.pksettings</td>
+        <td class="secondrow" data-label="Description">Check Myuu's current settings on your server</td>
+        <td class="thirdrow" data-label="Example">.pksettings</td>
+      </tr>
+      <tr>
+        <td class="firstrow" scope="row" data-label="Command">.pksetprefix &lt;prefix&gt;</td>
+        <td class="secondrow" data-label="Description">Change Myuu's prefix. It's `.` by default. The prefix can contain a max of 5 symbols/ letters</td>
+        <td class="thirdrow" data-label="Example">.pksetprefix !</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<svg version="1.1" id="Starters" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1625.9 412.5" style="enable-background:new 0 0 1625.9 412.5;" xml:space="preserve">
+<style type="text/css">
+    .st0{fill:#2B5030;}
+    .st1{fill:#83603D;}
+    .st2{fill:#7B281C;}
+    .st3{fill:#566C78;}
+    .st4{fill:#5E463D;}
+    .st5{fill:#87792F;}
+
+  svg {
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    width: 75%;
+  }
+</style>
+<path class="st0" d="M9.4,140.9c0,0,24-53.5,104.5-57.5c0,0,60.5,1,77-7.5c0,0,26-9.5,30-25.5c0,0,10.5,7,15,22c0,0,15-18.5,26-17.5
+	l-7,28l25-9c0,0-17,32-11,53.5c0,0,4.4,11.1,23,40.5c0,0,44,67,23,127.5c0,0-8.8,26.8-38,47c0,0,43.7-45.5,35-102.5
+	c0,0-2.8-25.3-26.8-72.7c0,0-24-40-25-57.7c0,0-1.4-7.7,10.3-25l-20.9,4.3l4.6-23.5c0,0-13.4,3.6-21.6,14.5c0,0-1.5-11.1-10.1-21
+	c0,0-2.5,37.5-89,35C133.4,93.9,61.4,87.9,9.4,140.9z"/>
+<path class="st0" d="M230.4,78.9c0,0-32.5,24.3-63.5,25.8s-52.8,14-60.8,23.8c0,0,19-18,49.3-18.8c20.3-0.5,30-3.5,30-3.5
+	S208.8,99.9,230.4,78.9z"/>
+<path class="st0" d="M249.6,92.4c0,0-17.8,24.3,12.5,94.5c0,0,27.5,53.5-1.3,82c0,0-12.5,12.8-29.3,18.3c0,0,35.8-2.8,47.3-35.5
+	c0,0,3.8-13.3-0.6-29.6c0,0-7.4-33.1-12.4-44.9S242.9,113.9,249.6,92.4z"/>
+<path class="st1" d="M521.1,317.6c0,0,69.5-16,69.5-85.5C590.6,232.1,581.4,289.6,521.1,317.6z"/>
+<path class="st1" d="M608.1,237.4c0,0-2,93.7-76.5,148.5C531.6,385.9,607.4,365.9,608.1,237.4z"/>
+<path class="st2" d="M582.9,227.4c0,0-13-13.8-14.5-21s-0.5-10-5.5-14.5c0,0-9.3-9.8-19.8-15.8c0,0-5.5-2.8-1.5-8.8
+	c0,0,6.8-16.3,17.5-24.8c0,0,4.5-3,4.5-8.8c0,0,2.5-43.5,2.5-47c0,0,1.5,4,3.5,4c0,0,4.5,1.1,5.5-19l14.3,17.7l14-62.5
+	c0,0,1.2,0.3,1.5,2.9c0,0,0.7,6.8,7.3,8.2c0,0,7.8,1.2,5.7,52.3c0,0-0.7,9.8,22.2,23.5c0,0,6.7,5.3,2.2,18.8c0,0-5.8,25.5-14.2,40.2
+	l13.2-7.8c0,0,0.3,12.8-7,19c-7.3,6.2-5.2,21.2-2.7,24.8c2.5,3.7,6,4,6.2,9.2c0.2,5.2,0.7,6,0.7,6s1.8-6.3,3.5-7s0.5-4.7-1-5.7
+	s-3.8-6.2,1.5-16.7c0,0,15.2-26.5,17.7-40.2l-9.3,3l1.3-18.7l-13.3,20.2c0,0,8.7-24.5,11.5-28.2c2.8-3.7,5-5.5,5-10.5
+	s-1.7-13-13.5-20.3c-11.8-7.3-15-26.5-15.5-34.2c0,0-1-16.2-1-18.3c0,0-0.3-11.7-2.7-15c0,0-2.8-9.7-8.2-10.7S601.7,5.2,601.7,5.2
+	L589,75.7l-13.2-31.3L567,78.1l-8-12.2c0,0-3,23.3-4.2,64.2c0,0,1.2,8.3-25.2,41.5c0,0-3.8,6,6.8,12.2c0,0,18.2,9.8,20.5,13.5
+	c2.3,3.7,2.3,6.3,1.5,9.7c-0.8,3.3,1,7.3,4.8,10.8S575.5,224.9,582.9,227.4z"/>
+<path class="st3" d="M902,386.2c0,0,138.6,39.2,169.7-40c31.3-79.6-24.7-107.5-37-110.3c-8.4-1.9-67-17.7-115,51.3
+	c0,0,61-55,106.7-41c36.4,11.2,42.8,43.2,42,60.4c-0.9,18.6-4.3,47.5-45.4,67c-53.9,25.5-63.3-15.7-63.3-15.7s-5.3-13.1,6-43.9
+	c0,0-33.7,39.9-2,68.5C963.7,382.6,960.4,389.9,902,386.2z"/>
+<path class="st4" d="M918.4,249.1c0,0,23-126.8-68-199.3c0,0-7,33.5,3.8,50.3c9.7,15,8.8,6,13.5,21.8s6.5,56.5-4.5,91
+	c-6.3,25.2,15,90.2,20.3,104.7c0,0-16.5-82.7-14.8-99.5s12.8-50.3,7.5-82.3c0,0-2.9-21.4-13-29.5s-11.3-27.3-9.3-46.8
+	c0,0,30,20.3,50.3,77.8S918.6,247.1,918.4,249.1z"/>
+<path class="st4" d="M919.2,222.1c0,0-14.4,22.6-44.4,49.3l0.3,1.9c0,0,38.1-31.2,44.1-48.5V222.1z"/>
+<path class="st4" d="M853.9,86.7c0,0,21.4,9.7,44.4,35.8l4.4,11c0,0-18.4-26.2-47.9-41.9L853.9,86.7z"/>
+<path class="st5" d="M1221.9,367.4l-23-51l74.5-10l-45.5-75l96.5,0.5l-48.5-168.5c0,0,225-31.5,343.5,0l-90.5,166.5l-138.5-51.5
+	l-7,113l-77.5-14.5l26,75.5l-82.5,2l13,50l-25.5-62l78-5l-22.5-73.5l76.5,13l4.5-125l148.5,58l73-134c0,0-214-18.5-300-2.5l47,163
+	l-93,7.5l39,68.5l-72,12.5L1221.9,367.4z"/>
+</svg>
+
+
+<script>
+  var items_list = ['yetkili', 'ayar', 'kayit-sistemi', 'otorol-sistemi', 'oyun'];
+
+  $(document).ready(function () {
+    $('#site-nav-ul li:nth-child(3) a').addClass('active');
+
+    if(window.location.href && window.location.href.indexOf("#") === -1){
+      $('#cmdnav li:first-child a').addClass('active');
+    }
+    else if(items_list.includes(window.location.href.split('#')[1])){
+      $('#cmdnav li a').eq(items_list.indexOf(window.location.href.split('#')[1])).addClass('active');
+      selection(window.location.href.split('#')[1]);
+    }
+
+    $('#cmdnav li a').click(function (e) {
+      e.preventDefault();
+      $('a').removeClass();
+      $(this).addClass('active');
+    });
+  });
+  
+  function selection(picked)
+  {
+    if(!picked)
+      picked = 'basic';
+
+    for(var i = 0; i < items_list.length; i++)
+    {
+      document.getElementById(items_list[i]).style.display = ((picked == items_list[i]) ? '' : 'none');
+    }
+
+    document.location.href='#'+picked;
+  }
+</script>
+
+</body>
+
+
+<!-- Mirrored from myuu.xyz/commands by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Dec 2019 10:38:11 GMT -->
+</html>
